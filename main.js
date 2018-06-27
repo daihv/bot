@@ -24,7 +24,7 @@ login({email: "FB_EMAIL", password: "FB_PASSWORD"}, (err, api) => {
 		//message.body = tin nhắn bạn send cho bot
 		else if (message.body){
 			console.log("FB.com/" + message.threadID + ' - Message: '+message.body);
-			api.sendMessage("\n \n🙂 Đây là Jarvis AI. \n- Hieu đang đi ỉa, sẽ rep hay khi Hieu seen \n- Nếu muốn chat với Jarvis gõ /Jarvis. \n- Tin nhắn của bạn: " + message.body, message.threadID);
+			api.sendMessage("\n \n:D Đây là Đại. \n- Đại hiện đang đi ỉa nên sẽ trả lời ngay khi Đại ỉa xong \n- Nếu muốn Đại ỉa nhanh hơn vui lòng thả <3. \n- Tin nhắn của bạn: " + message.body, message.threadID);
 	        return;
 		}
 	});
