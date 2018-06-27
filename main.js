@@ -1,7 +1,7 @@
 const fs = require("fs");
 const login = require("facebook-chat-api");
 
-login({email: "FB_EMAIL", password: "FB_PASSWORD"}, (err, api) => {
+login({email: "email", password: "password"}, (err, api) => {
     if(err) return console.error(err);
 
     fs.writeFileSync('appstate.json', JSON.stringify(api.getAppState()));
@@ -14,11 +14,10 @@ login({email: "FB_EMAIL", password: "FB_PASSWORD"}, (err, api) => {
 			api.sendMessage(message.senderID, message.threadID);
                         api.sendMessage("Your ID: ", message.threadID); 			
 		} 
-		//Ví dụ nếu mình set message.body = /Jarvis thì bot sẽ print api.sendMessage = Send bobs n vegena... 
-		else if(message.body === "/Jarvis"||message.body==="/jarvis") { 
+		else if(message.body === "<3") { 
 			console.log("FB.com/" + message.threadID + ' - Message: '+message.body);
-			api.sendMessage("Send bobs n vegena. \nEnter /NotFemale if u dont have bobs n vegena", message.threadID); 
-			api.sendMessage("Please read the following sentence to activate Jarvis", message.threadID);
+			api.sendMessage("Ok đợi 1 tý nhé!", message.threadID); 
+			api.sendMessage("Ị xong phải rửa tay chứ! :D", message.threadID);
 			return;
 		}
 		//message.body = tin nhắn bạn send cho bot
