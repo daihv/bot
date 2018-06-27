@@ -28,3 +28,8 @@ login({email: "email", password: "password"}, (err, api) => {
 		}
 	});
 });
+/*login bằng cookie
+login({appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8'))}, (err, api) => {
+    if(err) return console.error(err);
+});
+*/
